@@ -19,8 +19,8 @@ fun main() {
     val initCrystalOre: Int = 7
     val initIronOre: Int = 11
 
-    var receivedCrystalOre: Int = 0    // Вводим нужные значения заработанных ресурсов к изначальным
-    var receivedIronOre: Int = 0
+    var receivedCrystalOre: Int = 15    // Вводим нужные значения заработанных ресурсов к изначальным
+    var receivedIronOre: Int = 10
 
     var buffReceivedCrystalOre: Int = receivedCrystalOre * 20 / 100
     var buffReceivedIronOre: Int = receivedIronOre * 20 / 100
