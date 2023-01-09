@@ -13,12 +13,12 @@ package lesson_3
 
 fun main() {
 
-    val serverData: String = "[D2-D4;0]"
-    val parsing: List<String> = serverData.split("[", "-", ":", ";", "]")
+    val serverData: String = "D2-D4;0"
+    val parsing: List<String> = serverData.split("-", ":", ";")
 
-    val moveStart: String = parsing[1]
-    val moveEnd: String = parsing[2]
-    val moveNumber: String = parsing[3]
+    val moveStart: String = parsing[0]
+    val moveEnd: String = parsing[1]
+    val moveNumber: String = parsing[2]
 
     println("""Starting position: $moveStart
         |End position: $moveEnd
