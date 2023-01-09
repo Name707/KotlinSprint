@@ -19,12 +19,12 @@ fun main() {
     var moveStart: String = "E2"
     var moveEnd: String = "E4"
 
-    println("$moveStart:$moveEnd, $moveNumber")
+    println("[$moveStart-$moveEnd;$moveNumber]")
 
     moveNumber++
     moveStart = "D2"
     moveEnd = "D3"
 
-    println("$moveStart:$moveEnd, $moveNumber")
+    println("[$moveStart-$moveEnd;$moveNumber]")
 
 }
