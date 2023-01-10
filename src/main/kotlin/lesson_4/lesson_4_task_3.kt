@@ -29,7 +29,7 @@ fun main() {
                 weather == "солнечная погода" &&
                         awning == "раскрытый тент" &&
                         humidity == 20 &&
-                        season == "зима"
+                        season != "зима"
             }")
 
 }
