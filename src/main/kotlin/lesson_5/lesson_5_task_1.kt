@@ -16,15 +16,12 @@ package lesson_5
 
 fun main() {
 
-    var numberFirst = (-100..100).random()
-    var numberSecond = (-100..100).random()
+    val numbers = listOf((-100..100).random(), (-100..100).random())
 
-    println("Здравствуйте, введите сумму чисел: $numberFirst и $numberSecond")
+    println("Здравствуйте, введите сумму чисел: ${numbers[0]} и ${numbers[1]}")
 
-    var userAnswer = readLine()?.toInt()
+    val userAnswer = readLine()?.toInt()
 
-    if (userAnswer == numberFirst + numberSecond) {
-        println("Добро пожаловать!")
-    }
+    if (userAnswer == numbers.sum()) println("Добро пожаловать!")
     else println("Доступ запрещен.")
 }
