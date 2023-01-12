@@ -14,18 +14,19 @@ package lesson_5
 При успешной авторизации вывести приветственное сообщение, иначе вывести сообщение об ошибке авторизации.
  */
 
-private val userInfo = listOf("Batman", "password")
-
 fun main() {
+
+    val userName = "Batman"
+    val userPass = "password"
 
     println("Введите логин:")
     val userLogin = readLine()
 
-    if (userLogin == userInfo[0]) {
+    if (userLogin == userName) {
         println("Введите пароль:")
         val userPassword = readLine()
 
-        if (userPassword == userInfo[1]) {
+        if (userPassword == userPass) {
             println("Здравствуйте, вход выполнен")
         } else println("Неверный пароль")
     } else println("Неверный логин. Зарегистрируйтесь")
