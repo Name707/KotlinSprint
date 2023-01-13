@@ -15,8 +15,8 @@ package lesson_5
  – Если угадано только одно число, вывести “Вы выиграли утешительный приз!”
  – Если не угадано ничего, вывести “Неудача! Крутите барабан!”
  */
-private const val numberOne = 70
-private const val numberTwo = 7
+private const val NUMBER_ONE = 70
+private const val NUMBER_TWO = 7
 
 fun main() {
 
@@ -26,10 +26,10 @@ fun main() {
     println("Введите целое число №2 (от 0 до 100:)")
     val userChoiceTwo = readLine()!!.toInt()
 
-    if (userChoiceOne == numberOne && userChoiceTwo == numberTwo) println("Поздравляем! Вы выиграли главный приз!")
-    else if (userChoiceOne == numberOne || userChoiceTwo == numberTwo) println("Вы выиграли утешительный приз!")
+    if (userChoiceOne == NUMBER_ONE && userChoiceTwo == NUMBER_TWO) println("Поздравляем! Вы выиграли главный приз!")
+    else if (userChoiceOne == NUMBER_ONE || userChoiceTwo == NUMBER_TWO) println("Вы выиграли утешительный приз!")
     else println("""Неудача! Крутите барабан!
-        |Для победы было необходимо угадать числа $numberOne и/или $numberTwo
+        |Для победы было необходимо угадать числа $NUMBER_ONE и/или $NUMBER_TWO
     """.trimMargin())
 
 }
