@@ -13,28 +13,16 @@ package lesson_6
 
 fun main() {
 
-    println("Регистрация. Придумайте логин:")
-    val checkInLogin = readLine()
-
-    println("Регистрация. Придумайте пароль:")
-    val checkInPassword = readLine()
-
-    println("Введите логин:")
-    val inputLogin = readLine()
-
-    println("Введите пароль:")
-    val inputPassword = readLine()
-
-    if (inputLogin == checkInLogin && inputPassword == checkInPassword) println("Авторизация прошла успешно")
-
-    if (inputLogin != checkInLogin) println("Неверный логин")
-
-    while (inputLogin == checkInLogin && inputPassword != checkInPassword) {
-        println("Неверный пароль. Введите пароль еще раз:")
-        val newTryPassword = readLine()
-        if (newTryPassword == checkInPassword) {
-            println("Авторизация прошла успешно")
-            break
-        }
-    }
+    println("Создайте логин")
+    val logUser = readLine()
+    println("Придумайте пароль")
+    val passUser = readLine()
+    println("Регистрация прошла успешно")
+    do {
+        println("Введите логин")
+        val logEnter = readLine()
+        println("Введите пароль")
+        val passEnter = readLine()
+    } while (logEnter != logUser || passEnter != passUser)
+    println("Авторизация прошла успешно")
 }
