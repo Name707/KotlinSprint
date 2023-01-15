@@ -19,11 +19,11 @@ fun main() {
 
     do {
         println("Попытка №$tries")
-        val userInput = readLine()
+        val userInput = readLine()!!.toInt()
         tries--
-        if (userInput!!.toInt() == winNumber) println("Это была великолепная игра!")
-        else if (userInput!!.toInt() != winNumber && tries == 0) println("Было загадано число $winNumber")
-    } while (userInput!!.toInt() != winNumber && tries != 0)
+        if (userInput == winNumber) println("Это была великолепная игра!")
+        else if (userInput != winNumber && tries == 0) println("Было загадано число $winNumber")
+    } while (userInput != winNumber && tries != 0)
 
 
 }
