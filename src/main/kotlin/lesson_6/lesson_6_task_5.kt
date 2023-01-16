@@ -18,8 +18,12 @@ package lesson_6
 
 fun main() {
 
-    val logUser = "user"
-    val passUser = "707"
+    println("Создайте логин")
+    val logUser = readLine()
+    println("Придумайте пароль")
+    val passUser = readLine()
+    println("Регистрация прошла успешно")
+
     do {
         println("Введите логин")
         val logEnter = readLine()
@@ -32,7 +36,6 @@ fun main() {
     do {
 
         val botInspector = listOf((1..9).random(), (1..9).random())
-
 
         println("""Подтвердите, что Вы не робот.
         |Введите правильный ответ: ${botInspector[0]} + ${botInspector[1]} =
