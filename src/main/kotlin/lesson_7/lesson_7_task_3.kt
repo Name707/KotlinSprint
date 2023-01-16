@@ -13,10 +13,6 @@ fun main() {
     println("Ведите целое число:")
     val userInput = readLine()!!.toInt()
 
-    for (number in 0..userInput) {
-
-        if (number % 2 == 0) println(number)
-
-    }
+    for (number in 0..userInput step 2) println(number)
 
 }
