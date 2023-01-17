@@ -15,14 +15,10 @@ fun main() {
     println("Введите засекаемое время")
     val userInput = readLine()!!.toLong()
 
-    var timerStart = 0
-
     do {
-        for (item in userInput downTo 0) {
+        for (timePassed in userInput downTo 0) {
             Thread.sleep(1000)
-            println("""Прошло: $timerStart
-                |Осталось секунд: $item""".trimMargin())
-            timerStart++
+            println("Осталось секунд: $timePassed")
         }
     } while (Thread.interrupted())
     println("Время вышло")
