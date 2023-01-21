@@ -12,7 +12,7 @@ package lesson_9
 
 fun main() {
 
-    println("Введите 5 ингредиентов через запятую:")
+    println("Введите 5 ингредиентов через запятую: ")
     val userInput = readln()
 
     val ingredients = userInput.split(",").sorted()
