@@ -17,7 +17,7 @@ package lesson_9
 
 fun main() {
 
-    val ingredientsForOneDish = listOf(2, 300, 150)
+    val ingredientsForOneDish = listOf(2, 50, 15)
     println("Сколько порций необходимо?")
 
     val numberOfServings = readln().toInt()
