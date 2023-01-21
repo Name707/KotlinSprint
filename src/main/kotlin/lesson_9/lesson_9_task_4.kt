@@ -15,7 +15,7 @@ fun main() {
     println("Введите 5 ингредиентов через запятую: ")
     val userInput = readln()
 
-    val ingredients = userInput.split(",").sorted()
-    println(ingredients)
+    val ingredients = userInput.split(",")
+    for (item in ingredients.sorted()) println(item)
 
 }
