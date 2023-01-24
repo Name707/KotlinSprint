@@ -16,8 +16,7 @@ package lesson_10
 fun main() {
 
     println("Придумайте логин и пароль:")
-    val registration = validator(readln(), readln())
-    registration
+    return validator(readln(), readln())
 
 }
 
