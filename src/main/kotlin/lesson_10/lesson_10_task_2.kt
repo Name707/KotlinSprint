@@ -17,12 +17,13 @@ fun main() {
 
     println("Придумайте логин и пароль:")
     val registration = validator(readln(), readln())
+    registration
 
 }
 
 fun validator(login: String?, pass: String?) {
 
-    val validatorCheck = if (login?.length!! < 4 || pass?.length!! < 4)
+    if (login?.length!! < 4 || pass?.length!! < 4)
         println("Логин или пароль недостаточно длинные")
     else println("Здравствуйте")
 
