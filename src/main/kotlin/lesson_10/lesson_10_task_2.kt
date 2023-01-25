@@ -16,14 +16,15 @@ package lesson_10
 fun main() {
 
     println("Придумайте логин и пароль:")
-    return validator(readln(), readln())
+    val userInput = validator(readln(), readln())
+    println(userInput)
 
 }
 
-fun validator(login: String?, pass: String?) {
+fun validator(login: String?, pass: String?): String {
 
-    if (login?.length!! < 4 || pass?.length!! < 4)
-        println("Логин или пароль недостаточно длинные")
-    else println("Здравствуйте")
+    return if (login?.length!! < 4 || pass?.length!! < 4)
+        "Логин или пароль недостаточно длинные"
+    else "Здравствуйте"
 
 }
