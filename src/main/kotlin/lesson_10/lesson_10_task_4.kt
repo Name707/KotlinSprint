@@ -21,8 +21,8 @@ fun main() {
 
     val humanWinsInit = 0
 
-    val startGame = game(humanWinsInit)
-    println("Игра окончена, выигрышей человека: $startGame")
+    val counterHumanWins = startRound(humanWinsInit)
+    println("Игра окончена, выигрышей человека: $counterHumanWins")
 
 }
 
@@ -42,7 +42,7 @@ fun diceRoll(): Int {
     return diceOne + diceTwo
 }
 
-fun game(wins: Int): Int {
+fun startRound(wins: Int): Int {
 
     var humanWins = wins
 
@@ -58,8 +58,8 @@ fun game(wins: Int): Int {
             humanWins++
         } else println("Победила машина")
         println("Хотите бросить кости еще раз Введите Да или Нет")
-        val nextOrStop = readln()
-    } while (nextOrStop != "Нет")
+        val nextOrStop = readln().uppercase()
+    } while (nextOrStop != "НЕТ")
     return humanWins
 
 }
