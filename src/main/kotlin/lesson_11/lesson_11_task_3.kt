@@ -21,19 +21,27 @@ package lesson_11
 
 fun main() {
 
-    val rockUsers = listOf(User("Аватар-Гитара.jpg", "Рок-участник №1"),
-        User("Аватар-Барабаны.jpg", "Рок-участник №2"))
+    val rockUsers = listOf(
+        User("Аватар-Гитара.jpg", "Рок-участник №1", "Включить микрофон"),
+        User("Аватар-Барабаны.jpg", "Рок-участник №2", "Выключить микрофон")
+    )
 
-    val classicalUsers = listOf(User("Аватар-Скрипка.jpg", "Классик-участник №1"),
-        User("Аватар-Фортепиано.jpg", "Классик-участник №2"))
+    val classicalUsers = listOf(
+        User("Аватар-Скрипка.jpg", "Классик-участник №1", "Заглушить"),
+        User("Аватар-Фортепиано.jpg", "Классик-участник №2", "Включить микрофон")
+    )
 
-    val rockMusicRoom = Room("Рок-обложка комнаты",
+    val rockMusicRoom = Room(
+        "Рок-обложка комнаты",
         "Название комнаты Рокеры",
-        rockUsers)
+        rockUsers
+    )
 
-    val classicalMusicRoom = Room("Классическая обложка комнаты",
+    val classicalMusicRoom = Room(
+        "Классическая обложка комнаты",
         "Название комнаты Классика",
-        classicalUsers)
+        classicalUsers
+    )
 
 }
 
@@ -46,10 +54,11 @@ class Room(
 class User(
     avatarParameter: String,
     nameParameter: String,
+    userVoiceStatus: String,
 ) {
 
     private val name = nameParameter
-    private var userStatus = "Микрофон выключен"
+    private var voiceStatus = userVoiceStatus
     private var longTapActivated = "Отображение имени отключено"
 
     fun avatarLongTap(tap: Boolean = false): String {
@@ -59,12 +68,12 @@ class User(
 
     fun userVoiceStatus(getStatus: String): String {
 
-        when(getStatus) {
-            "Включить микрофон" -> userStatus = "разговаривает"
-            "Выключить микрофон" -> userStatus = "микрофон выключен"
-            "Заглушить" -> userStatus = "пользователь заглушен"
+        when (getStatus) {
+            "Включить микрофон" -> voiceStatus = "разговаривает"
+            "Выключить микрофон" -> voiceStatus = "микрофон выключен"
+            "Заглушить" -> voiceStatus = "пользователь заглушен"
         }
-        return userStatus
+        return voiceStatus
 
 
     }
