@@ -25,11 +25,11 @@ fun main() {
 
     val userSevenZeroSeven = User(707, "Name707", "password", "707VLAN@gmail.com")
 
-    userSevenZeroSeven.userInfo()
+    userSevenZeroSeven.printUserInfo()
 
-    userSevenZeroSeven.userBio()
+    userSevenZeroSeven.addUserBio()
 
-    userSevenZeroSeven.passChanger()
+    userSevenZeroSeven.createNewPassword()
 
     userSevenZeroSeven.sendMail()
 
@@ -38,7 +38,7 @@ fun main() {
 class User(val userId: Int, val userLogin: String, var userPass: String, val userEmail: String) {
 
     var bio = ""
-    fun userInfo() {
+    fun printUserInfo() {
         println(
             """UserOne: 
         |id:$userId
@@ -50,14 +50,14 @@ class User(val userId: Int, val userLogin: String, var userPass: String, val use
         )
     }
 
-    fun userBio(): String {
+    fun addUserBio(): String {
         println("Введите информация о себе:")
         bio = readln()
         println("Добавлена информация о себе: $bio")
         return bio
     }
 
-    fun passChanger() {
+    fun createNewPassword() {
         println("Смена пароля. Введите старый пароль:")
         do {
             val oldPass = readln()
