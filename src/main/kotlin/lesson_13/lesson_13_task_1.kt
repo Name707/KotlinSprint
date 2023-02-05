@@ -10,10 +10,10 @@ package lesson_13
 
  */
 
-fun mai() {}
+fun main() {}
 
 class UserContacts(
-    val name: Int,
-    val phoneNumber: String,
+    val name: String,
+    val phoneNumber: Int,
     val company: String?,
 )
