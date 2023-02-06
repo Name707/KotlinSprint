@@ -23,7 +23,7 @@ class Weather(
     val atmospherePressure: Int,
 ) {
     init {
-        println("Дождь: $rain")
+        if(rain) println("Идет дождь") else println("Дождь не идет")
     }
     fun weatherPrint() {
         println(
