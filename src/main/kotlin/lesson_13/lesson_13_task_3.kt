@@ -16,16 +16,16 @@ package lesson_13
 
 fun main() {
 
-    val phoneBook: MutableList<UserContacts> = mutableListOf()
-    phoneBook.add(UserContacts("Ростислав", 89123456789, "Reddit"))
-    phoneBook.add(UserContacts("Вячеслав", null, "GitHub"))
-    phoneBook.add(UserContacts("Анна", 81561211651, null))
+    val phoneBook: MutableList<UserContact> = mutableListOf()
+    phoneBook.add(UserContact("Ростислав", 89123456789, "Reddit"))
+    phoneBook.add(UserContact("Вячеслав", null, "GitHub"))
+    phoneBook.add(UserContact("Анна", 81561211651, null))
 
     for (item in phoneBook) item.userInfoPrinter()
 
 }
 
-class UserContacts(
+class UserContact(
     val name: String?,
     val phoneNumber: Long?,
     val company: String?,
