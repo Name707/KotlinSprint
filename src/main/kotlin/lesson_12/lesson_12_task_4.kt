@@ -9,9 +9,8 @@ package lesson_12
  */
 
 fun main() {
-    val weatherYesterday = Weather(15.0, 10.0, true,768)
 
-    weatherYesterday.weatherPrint()
+    val weatherYesterday = Weather(15.0, 10.0, true, 768)
 
 }
 
@@ -23,14 +22,16 @@ class Weather(
     val atmospherePressure: Int,
 ) {
     init {
-        if(rain) println("Идет дождь") else println("Дождь не идет")
+        if (rain) println("Идет дождь") else println("Дождь не идет")
+        weatherPrint()
     }
+
     fun weatherPrint() {
+
         println(
             """Температура воздуха днем: $temperatureAfternoon
             |Температура воздуха ночью: $temperatureNight
             |Атмосферное давление: $atmospherePressure
-            |
         """.trimMargin()
         )
     }
