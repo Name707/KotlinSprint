@@ -17,15 +17,18 @@ package lesson_13
 
 fun main() {
 
-    val addContacts: MutableList<UserContact> = mutableListOf(UserContact())
+    val addContacts: MutableList<UserContact> = mutableListOf()
+    val addFirstContact = UserContact("Вячеслав", "8132487654", "Reddit")
+    addContacts.add(addFirstContact)
     addContacts.forEach { it.addNewUserContact() }
+    addContacts.forEach { println("Контакт: ${it.name}, ${it.phoneNumber}, ${it.company}") }
 
 }
 
 class UserContact(
-    val name: String? = null,
-    val phoneNumber: String? = null,
-    val company: String? = null,
+    val name: String?,
+    val phoneNumber: String?,
+    val company: String?,
 ) {
     fun addNewUserContact(): MutableList<UserContact> {
 
@@ -42,13 +45,12 @@ class UserContact(
 
             if ((addContact.name != null && addContact.phoneNumber != null) ||
                 (addContact.name == null || addContact.company == null)
-            ) phoneBookList.add(addContact)
+            ) phoneBookList.addAll(listOf(addContact))
 
             println("Если хотите добавить новую запись, введите \"да\"")
             val addNextContactChecker = readln()
 
         } while (addNextContactChecker.uppercase() == "ДА")
-        phoneBookList.forEach { println("Контакт: ${it.name}, ${it.phoneNumber}, ${it.company}") }
         return phoneBookList
     }
 }
