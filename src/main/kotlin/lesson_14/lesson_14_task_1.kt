@@ -20,6 +20,43 @@ fun main() {
     standartShip.printShipSpeed()
     standartShip.printShipLoadCapacity()
 
+    println(
+        """|
+        |Свойства корабля "${standartShip.shipName}":
+        |Тип корабля: ${standartShip.shipType}
+        |Скорость: ${standartShip.shipSpeed}
+        |Количество перевозимого груза: ${standartShip.loadCapacityShip}
+        |Способность колоть лёд: ${standartShip.icebreaker}
+    """.trimMargin()
+    )
+
+}
+
+class StandartShip(val shipName: String) {
+    val shipType: String = "Стандартный корабль"
+    val shipSpeed: Byte = 28
+    val loadCapacityShip: Int = 10000
+    val icebreaker: Boolean = false
+
+    fun printShipSpeed() {
+
+        println("Корабль \"$shipName\" может плыть со скоростью $shipSpeed узлов в час.")
+
+    }
+
+    fun printShipLoadCapacity() {
+
+        println("Корабль \"$shipName\" может перевезти $loadCapacityShip ящиков груза.")
+
+    }
+
+}
+/*fun main() {
+
+    val standartShip = StandartShip("Кораблик")
+    standartShip.printShipSpeed()
+    standartShip.printShipLoadCapacity()
+
     val cargoShip = CargoShip("Титан")
 
     val icebreakerShip = Icebreaker("Первопроходец")
@@ -90,5 +127,5 @@ class Icebreaker(name: String): Ship() {
     override val shipSpeed: Byte = 15
     override val loadCapacityShip: Int = 7000
     override val icebreaker: Boolean = true
-}
+}*/
 
