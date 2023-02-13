@@ -46,7 +46,6 @@ open class ForumMessage(
             """Пост пользователя $authorName: 
             |$authorMessage""".trimMargin()
         )
-
     }
 }
 
