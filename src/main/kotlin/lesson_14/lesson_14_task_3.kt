@@ -16,9 +16,11 @@ package lesson_14
 
 fun main() {
 
-    val newPostAuthor = ForumMessage("User707", """Всем привет, на этом месте должно быть содержательное,
+    val newPostAuthor = ForumMessage(
+        "User707", """Всем привет, на этом месте должно быть содержательное,
         |интересное и оригинальное сообщение...
-    """.trimMargin())
+    """.trimMargin()
+    )
 
     newPostAuthor.publishPost()
 
@@ -27,7 +29,7 @@ fun main() {
         newPostAuthor.authorMessage,
         "Гость",
         "Привет, отличный пост."
-        )
+    )
 
     newCommentAuthor.publishComment()
 
@@ -40,8 +42,10 @@ open class ForumMessage(
 
     fun publishPost() {
 
-        println("""Пост пользователя $authorName: 
-            |$authorMessage""".trimMargin())
+        println(
+            """Пост пользователя $authorName: 
+            |$authorMessage""".trimMargin()
+        )
 
     }
 }
@@ -51,14 +55,15 @@ class ForumComment(
     val targetAuthorMessage: String,
     val commentatorName: String,
     val commentatorMessage: String,
-    ) : ForumMessage(commentatorName, commentatorMessage) {
+) : ForumMessage(commentatorName, commentatorMessage) {
 
-        fun publishComment() {
-            println("""
+    fun publishComment() {
+        println(
+            """
                 |
                 |$commentatorName: $commentatorMessage
                 |ответ на пост:
-                |"$targetAuthorName: $targetAuthorMessage"""".trimMargin())
-        }
-
+                |"$targetAuthorName: $targetAuthorMessage"""".trimMargin()
+        )
     }
+}
