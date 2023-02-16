@@ -22,6 +22,7 @@ fun main() {
 
     val duck = Duck()
     duck.flying()
+    duck.swimming()
 
 
 }
@@ -55,9 +56,13 @@ class Gull() : Fly {
     }
 }
 
-class Duck() : Fly {
+class Duck() : Fly, Swim {
 
     override fun flying() {
         println("Duck flying animal")
+    }
+
+    override fun swimming() {
+        println("Also duck can swim")
     }
 }
