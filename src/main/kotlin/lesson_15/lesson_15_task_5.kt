@@ -14,9 +14,19 @@ package lesson_15
 
 fun main() {
 
-    val firstTruck = Truck("Грузовой автомобиль")
-    val firstCar = Car("Легковой автомобиль")
-    val secondCar = Car("Легковой автомобиль")
+    val firstTruck = Truck(
+        "Грузовой автомобиль",
+        1,
+        2,
+    )
+    val firstCar = Car(
+        "Легковой автомобиль",
+        3
+    )
+    val secondCar = Car(
+        "Легковой автомобиль",
+        3
+    )
 
     firstTruck.carDrive()
     firstTruck.passengersTransportation()
@@ -31,14 +41,14 @@ fun main() {
 
 }
 
-interface Drive {
+interface Movable {
     val carType: String
     fun carDrive() {
         println("$carType поехал...")
     }
 }
 
-interface PassengersTransportation {
+interface PeopleTransportable {
     val carPassengersCapacity: Byte
 
     fun passengersTransportation() {
@@ -46,7 +56,7 @@ interface PassengersTransportation {
     }
 }
 
-interface CargoTransportation {
+interface CargoTransportable {
     val carCargoCapacity: Byte
 
     fun cargoTransportation() {
@@ -54,15 +64,13 @@ interface CargoTransportation {
     }
 }
 
-class Truck(override val carType: String) : Drive, PassengersTransportation, CargoTransportation {
+class Truck(
+    override val carType: String,
+    override val carPassengersCapacity: Byte = 1,
+    override val carCargoCapacity: Byte = 2,
+) : Movable, PeopleTransportable, CargoTransportable
 
-    override val carPassengersCapacity: Byte = 1
-    override val carCargoCapacity: Byte = 2
-
-}
-
-class Car(override val carType: String) : Drive, PassengersTransportation {
-
-    override val carPassengersCapacity: Byte = 3
-
-}
+class Car(
+    override val carType: String,
+    override val carPassengersCapacity: Byte = 3,
+) : Movable, PeopleTransportable
