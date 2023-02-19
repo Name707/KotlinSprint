@@ -21,9 +21,8 @@ class User(
     val userPassInputed: String,
 ) {
 
-    private val userPassword = "pass707"
-
     fun comparisonPasswords() {
+        val userPassword = "pass707"
         if (userPassInputed == userPassword) println("Введенный пароль верный")
         else println("Введенный пароль неверный")
     }
