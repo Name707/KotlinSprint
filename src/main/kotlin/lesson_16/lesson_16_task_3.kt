@@ -26,5 +26,4 @@ class User(
         if (userPassInputed == userPassword) println("Введенный пароль верный")
         else println("Введенный пароль неверный")
     }
-
 }
