@@ -13,10 +13,11 @@ package lesson_15
 
 fun main() {
 
-    val hammer = MusicalInstrument("Гитара", 56)
-    hammer.searching()
+    val guitar = MusicalInstrument("Гитара", 56)
+    guitar.searching()
+    println(guitar.quantityStock)
 
-    val hammerHandle = Accessory("Струна", 1707)
+    val guitarStrings = Accessory("Струна", 1707)
 
 }
 
@@ -29,8 +30,8 @@ interface Search {
 }
 
 abstract class Product(
-    productName: String,
-    quantityStock: Int,
+    val productName: String,
+    val quantityStock: Int,
 )
 
 class MusicalInstrument(
