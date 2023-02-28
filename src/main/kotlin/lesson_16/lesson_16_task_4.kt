@@ -16,17 +16,15 @@ package lesson_16
 fun main() {
 
     val order = Order(112233, "Прибыл на склад")
-    println(order.orderStatus)
+
     order.managerRequest()
     order.changeStatus()
-    println(order.orderStatus)
-
 
 }
 
 class Order(
     private val orderNumber: Int,
-    var orderStatus: String,
+    private var orderStatus: String,
 ) {
 
     private var permissionToChangeStatus = false
@@ -36,8 +34,8 @@ class Order(
         println("Заявка менеджеру отправлена.")
     }
 
-    fun changeStatus(): String {
+    fun changeStatus() {
         if (permissionToChangeStatus) orderStatus = "Готово к выдаче"
-        return orderStatus
+        println(orderStatus)
     }
 }
