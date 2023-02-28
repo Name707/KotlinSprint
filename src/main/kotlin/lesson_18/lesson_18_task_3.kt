@@ -35,17 +35,11 @@ abstract class Animal(
     open val name: String = "",
 ) {
 
-    open fun play() {
-        println("Животное игрет")
-    }
+    abstract fun play()
 
-    open fun sleep() {
-        println("Животное спит")
-    }
+    abstract fun sleep()
 
-    open fun eat() {
-        println("Животное ест")
-    }
+    abstract fun eat()
 
 }
 
