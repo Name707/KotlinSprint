@@ -13,7 +13,7 @@ package lesson_16
 fun main() {
 
     val user = User("Name707", "pass808")
-    user.comparisonPasswords()
+    user.comparisonPasswords("wrong pass")
 }
 
 class User(
@@ -21,9 +21,8 @@ class User(
     val userPassInputed: String,
 ) {
 
-    fun comparisonPasswords() {
-        val userPassword = "pass707"
-        if (userPassInputed == userPassword) println("Введенный пароль верный")
+    fun comparisonPasswords(checkPass: String) {
+        if (userPassInputed == checkPass) println("Введенный пароль верный")
         else println("Введенный пароль неверный")
     }
 }
