@@ -27,28 +27,15 @@ fun main() {
 }
 
 class Folder(
-    private var name: String,
-    private var files: Int,
-    var hiddenFlag: Boolean,
+    private val name: String,
+    private val files: Int,
+    private val hiddenFlag: Boolean,
 ) {
 
-    val folderName: String
-        get() {
+    val folderName: String = ""
+        get() = if (hiddenFlag) "Скрытая папка" else field
 
-            if (hiddenFlag) {
-                name = "Скрытая папка"
-            }
-            return name
-
-        }
-
-    val folderFiles: Int
-        get() {
-
-            if (hiddenFlag) {
-                files = 0
-            }
-            return files
-
-        }
+    val folderFiles: Int = 0
+        get() = if (hiddenFlag) 0 else field
 }
+
