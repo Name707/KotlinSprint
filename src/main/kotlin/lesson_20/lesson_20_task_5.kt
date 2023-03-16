@@ -28,7 +28,7 @@ class Robot {
         "Ошибка",
     )
 
-    private lateinit var modifier: (String) -> String
+    private var modifier: (String) -> String = { ("") }
 
     fun say() {
 
