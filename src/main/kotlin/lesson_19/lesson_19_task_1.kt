@@ -12,14 +12,8 @@ package lesson_19
 
 fun main() {
 
-    val fishes = listOf("guppy", "angelfish", "Goldfish", "SiameseFightingFish")
-    for (i in fishes) {
-        when (i) {
-            Fish.GUPPY.id -> getFishName(Fish.GUPPY)
-            Fish.ANGELFISH.id -> getFishName(Fish.ANGELFISH)
-            Fish.GOLDFISH.id -> getFishName(Fish.GOLDFISH)
-            Fish.SIAMESE_FIGHTING_FISH.id -> getFishName((Fish.SIAMESE_FIGHTING_FISH))
-        }
+    for (fish in Fish.values()) {
+        println("Можно добавить ${fish.id}")
     }
 }
 
@@ -30,11 +24,3 @@ enum class Fish(val id: String) {
     SIAMESE_FIGHTING_FISH("SiameseFightingFish"),
 }
 
-fun getFishName(fish: Fish) {
-    when (fish) {
-        Fish.GUPPY -> println("Можно добавить Гуппи")
-        Fish.ANGELFISH -> println("Можно добавить Скалярий")
-        Fish.GOLDFISH -> println("Можно добавить Золотых рыбок")
-        Fish.SIAMESE_FIGHTING_FISH -> println("Можно добавить Петушков")
-    }
-}
