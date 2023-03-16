@@ -1,5 +1,7 @@
 package lesson_20
 
+import kotlin.math.absoluteValue
+
 /*
 
 Задача 4 к Уроку 20
@@ -13,7 +15,10 @@ fun main() {
 
     val list = listOf("Кнопка", "Картинка", "Значок", "Рамка")
     val lambdaList = list.map { it -> { println("Нажат элемент [$it]") } }
-    lambdaList[1]()
-    lambdaList[3]()
 
+    for ((index, item) in lambdaList.withIndex()) {
+        if (index %2 == 1) {
+            item()
+        }
+    }
 }
