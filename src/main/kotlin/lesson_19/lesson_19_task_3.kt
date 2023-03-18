@@ -18,15 +18,15 @@ fun main() {
 
 class Spaceship() {
 
-    fun takeOff(): String {
-        TODO("Реализация взлета космического корабля")
+    fun takeOff() {
+        // TODO добавить реализацию взлета
     }
 
-    fun landOn(): String {
-        return println("Прописать логику приземления корабля").toString()
+    fun landOn() {
+        println("Прописать логику приземления корабля")
     }
 
-    fun Shoot(): String {
+    fun shoot(): String {
         TODO()
     }
 }
