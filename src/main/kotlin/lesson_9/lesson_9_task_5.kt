@@ -15,26 +15,18 @@ package lesson_9
 
 fun main() {
 
-    val userCombo = mutableListOf<String>()
-    println("Введите 5 ингредиентов:")
+    println("Введите 5 ингредиентов с маленькой буквы:")
 
+    val userIngredients = mutableListOf<String>()
     for (item in 1..5) {
         println("Введите ингредиент №$item")
-        userCombo.add(readln())
+        userIngredients.add(readln())
     }
 
-    userCombo.sort() // Сортировка списка
+    userIngredients.sort() // Сортировка списка
 
-    val userFirstItem = userCombo[0] // Выбираем первый элемент списка
-    val firstItemFirstChar = userCombo[0].replaceRange(0..0, userFirstItem[0].uppercase()) // Заглавная буква выбранного элемента
-
-    val convertResult = userCombo.toSet().joinToString(postfix = ".") // Исключаем повторы и добавляем postfix
-    val result = convertResult.replaceRange(0..0, firstItemFirstChar) // Заменяем первый элемент
+    val excludeRepeat = userIngredients.toSet().toList().joinToString(postfix = ".") // Исключаем повторы и добавляем postfix
+    val result = excludeRepeat[0].toString().replaceRange(0..0, excludeRepeat[0].uppercase()) + excludeRepeat.removeRange(0..0)  // Заглавная буква выбранного элемента*/
 
     println(result)
-
-    println("""
-        |https://www.youtube.com/watch?v=mJ5t1Oe8Gzo
-        | https://www.youtube.com/watch?v=z5BO5tgbL8s
-    """.trimMargin())
 }
