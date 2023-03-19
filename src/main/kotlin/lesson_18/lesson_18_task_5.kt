@@ -11,49 +11,36 @@ package lesson_18
 
 fun main() {
 
-    val point = Screen("Точка")
+    val point = Screen()
     point.draw(Point(), 0.6268F, 1.55797F)
 
-    val square = Screen("Квадрат")
+    val square = Screen()
     square.draw(Square(), 2, 5)
 
-    val circle = Screen("Круг")
+    val circle = Screen()
     circle.draw(Circle(), 5F, 6.041F)
 
 }
 
-class Point {
+class Point : Screen()
 
-    fun draw() {}
+class Square : Screen()
 
-}
+class Circle : Screen()
 
-class Square {
-
-    fun draw() {}
-
-}
-
-class Circle {
-
-    fun draw() {}
-
-}
-
-class Screen(
-    val shapeType: String,
-) {
+open class Screen {
 
     fun draw(shape: Point, coordinateX: Float, coordinateY: Float) {
-        println("Создана $shapeType с центром: [$coordinateX, $coordinateY]")
+        println("Создана ТОЧКА с центром: [$coordinateX, $coordinateY]")
     }
 
     fun draw(shape: Square, coordinateX: Int, coordinateY: Int) {
-        println("Создан $shapeType с центром: [$coordinateX, $coordinateY]")
+        println("Создан КВАДРАТ с центром: [$coordinateX, $coordinateY]")
     }
 
     fun draw(shape: Circle, coordinateX: Float, coordinateY: Float) {
-        println("Создан $shapeType с центром: [$coordinateX, $coordinateY]")
+        println("Создан КРУГ с центром: [$coordinateX, $coordinateY]")
     }
-
 }
+
+
