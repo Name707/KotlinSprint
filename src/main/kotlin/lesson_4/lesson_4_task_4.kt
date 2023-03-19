@@ -23,25 +23,18 @@ package lesson_4
 
 fun main() {
 
-    var trainingDay = 6
+    var trainingDay = 5
 
-    val armWorkoutDay = true
-    val legWorkoutDay = false
-    val backWorkoutDay = false
-    val absWorkoutDay = true
+    val armWorkoutDay = trainingDay % 2 == 1
+    val legWorkoutDay = trainingDay % 2 == 0
+    val backWorkoutDay = trainingDay % 2 == 0
+    val absWorkoutDay = trainingDay % 2 == 1
 
-    if (trainingDay % 2 != 0) {
-        println("""Упражнения для рук:    $armWorkoutDay 
+    println(
+        """Упражнения для рук:    $armWorkoutDay 
             |Упражнения для ног:    $legWorkoutDay 
             |Упражнения для спины:  $backWorkoutDay 
             |Упражнения для пресса: $absWorkoutDay
-            |""".trimMargin())
-    } else {
-        println("""Упражнения для рук:    ${!armWorkoutDay} 
-            |Упражнения для ног:    ${!legWorkoutDay} 
-            |Упражнения для спины:  ${!backWorkoutDay} 
-            |Упражнения для пресса: ${!absWorkoutDay}
-            |""".trimMargin())
-    }
-
+            |""".trimMargin()
+    )
 }
