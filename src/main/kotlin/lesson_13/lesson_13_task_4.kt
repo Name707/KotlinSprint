@@ -17,40 +17,49 @@ package lesson_13
 
 fun main() {
 
-    val addContacts: MutableList<UserContact> = mutableListOf()
-    val addFirstContact = UserContact("Вячеслав", "8132487654", "Reddit")
-    addContacts.add(addFirstContact)
-    addContacts.forEach { it.addNewUserContact() }
-    addContacts.forEach { println("Контакт: ${it.name}, ${it.phoneNumber}, ${it.company}") }
+    val phoneBook: MutableList<UserContact> = mutableListOf()
 
+    fun addNewContact() {
+        do {
+            println("Добавление нового контакта. Введите имя контакта:")
+            val newContactName = readln().ifBlank { null }
+
+            println("Введите номер телефона нового контакта:")
+            val newContactNumber = readln().ifBlank { null }?.toLong()
+
+            println("Введите компанию нового контакта:")
+            val newContactCompany = readln().ifBlank { null }
+
+            if (newContactName != null && newContactNumber != null) phoneBook.add(
+                UserContact(
+                    newContactName,
+                    newContactNumber,
+                    newContactCompany
+                )
+            )
+            else if (newContactName == null && newContactCompany == null || newContactNumber != null) phoneBook.add(
+                UserContact(newContactName, newContactNumber, newContactCompany)
+            )
+
+            println("Если хотите добавить новую запись, введите \'да\'")
+            val addNextContactChecker = readln()
+        } while (addNextContactChecker.uppercase() == "ДА")
+
+        phoneBook.forEach { it.userInfoPrinter() }
+    }
+
+    addNewContact()
 }
 
 class UserContact(
     val name: String?,
-    val phoneNumber: String?,
+    val phoneNumber: Long?,
     val company: String?,
 ) {
-    fun addNewUserContact(): MutableList<UserContact> {
-
-        val phoneBookList: MutableList<UserContact> = mutableListOf()
-
-        do {
-            println("Добавление контакта. Введите через \"Enter\" имя, номер и компанию контакта:")
-
-            val addContact = UserContact(
-                readln().ifBlank { null },
-                readln().ifBlank { null },
-                readln().ifBlank { null },
-            )
-
-            if ((addContact.name != null && addContact.phoneNumber != null) ||
-                (addContact.name == null || addContact.company == null)
-            ) phoneBookList.addAll(listOf(addContact))
-
-            println("Если хотите добавить новую запись, введите \"да\"")
-            val addNextContactChecker = readln()
-
-        } while (addNextContactChecker.uppercase() == "ДА")
-        return phoneBookList
+    fun userInfoPrinter() {
+        val nameNullChecker = name
+        val namePhoneNumber = phoneNumber
+        val nameCompanyChecker = company
+        println("Имя: $nameNullChecker \nНомер: $namePhoneNumber \nКомпания: $nameCompanyChecker\n")
     }
 }
