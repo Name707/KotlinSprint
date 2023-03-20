@@ -46,7 +46,6 @@ fun main() {
 
         phoneBook.forEach { it.userInfoPrinter() }
     }
-
     addNewContact()
 }
 
