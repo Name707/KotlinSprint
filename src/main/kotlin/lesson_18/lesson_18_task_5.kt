@@ -34,11 +34,23 @@ open class Screen {
         println("Создана ТОЧКА с центром: [$coordinateX, $coordinateY]")
     }
 
+    fun draw(shape: Point, coordinateX: Int, coordinateY: Int) {
+        println("Создана ТОЧКА с центром: [$coordinateX, $coordinateY]")
+    }
+
     fun draw(shape: Square, coordinateX: Int, coordinateY: Int) {
         println("Создан КВАДРАТ с центром: [$coordinateX, $coordinateY]")
     }
 
+    fun draw(shape: Square, coordinateX: Float, coordinateY: Float) {
+        println("Создан КВАДРАТ с центром: [$coordinateX, $coordinateY]")
+    }
+
     fun draw(shape: Circle, coordinateX: Float, coordinateY: Float) {
+        println("Создан КРУГ с центром: [$coordinateX, $coordinateY]")
+    }
+
+    fun draw(shape: Circle, coordinateX: Int, coordinateY: Int) {
         println("Создан КРУГ с центром: [$coordinateX, $coordinateY]")
     }
 }
