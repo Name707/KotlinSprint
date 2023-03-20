@@ -40,7 +40,6 @@ fun main() {
             else if (newContactName == null && newContactCompany == null || newContactNumber != null) phoneBook.add(
                 UserContact(newContactName, newContactNumber, newContactCompany)
             )
-
             println("Если хотите добавить новую запись, введите \'да\'")
             val addNextContactChecker = readln()
         } while (addNextContactChecker.uppercase() == "ДА")
