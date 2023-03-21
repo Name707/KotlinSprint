@@ -18,7 +18,7 @@ fun main() {
 
 class User(
     val userLoginInputed: String,
-    val userPassInputed: String,
+    private val userPassInputed: String,
 ) {
 
     fun comparisonPasswords(checkPass: String) {
