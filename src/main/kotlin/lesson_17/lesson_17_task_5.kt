@@ -18,9 +18,9 @@ fun main() {
 
     val newUser = User(
         "User707",
-        "pass707",
+        "validPassSSSSSSSSSSSSS",
     )
-    newUser.userPassword = "newPass"
+    newUser.userPassword = "WrongPass"
     println(newUser.userPassword)
 
     newUser.userLogin = "newLogin"
@@ -33,17 +33,12 @@ class User(
 ) {
 
     var userPassword = password
-        set(value) {
-            field = if (value == password) value
-            else println("Вы не можете изменить пароль").toString()
-        }
-        get() {
-            return field.replace(Regex("[a-zA-Z0-9._-]"), "*")
-        }
+        set(value) = println("Вы не можете изменить пароль")
+        get() = "*".repeat(field.length)
 
     var userLogin = login
         set(value) {
             field = value
-            println("Пароль успешно изменен")
+            println("Логин успешно изменен")
         }
 }
