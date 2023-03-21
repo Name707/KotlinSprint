@@ -24,11 +24,12 @@ package lesson_4
 fun main() {
 
     var trainingDay = 5
+    val isEven = trainingDay % 2 == 0
 
-    val armWorkoutDay = trainingDay % 2 == 1
-    val legWorkoutDay = trainingDay % 2 == 0
-    val backWorkoutDay = trainingDay % 2 == 0
-    val absWorkoutDay = trainingDay % 2 == 1
+    val armWorkoutDay = !isEven
+    val legWorkoutDay = isEven
+    val backWorkoutDay = isEven
+    val absWorkoutDay = !isEven
 
     println(
         """Упражнения для рук:    $armWorkoutDay 
